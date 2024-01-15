@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+service Calculator {
+  rpc Calculate (Request) returns (Result);
+}
+
+enum Operation {
+  add = 0;
+  multiply = 1;
+}
+
+message Request {
+  Operation operation = 1;
+  int64 num1 = 2;
+  int64 num2 = 3;
+}
+
+message Result {
+  int64 value = 1;
+}
